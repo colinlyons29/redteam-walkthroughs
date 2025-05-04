@@ -8,3 +8,5 @@ A practical cybersecurity portfolio showcasing real-world CVE exploits, lab-base
 
 - [**ms17_010_eternalblue - Unauthenticated RCE via Exposed Backup Endpoint**](ms17_010_eternalblue/README.md)
 - [**CVE-2024-21413 - Moniker Link Email Exploit**](CVE-2024-21413-MonikerLink/README.md)
+- [**PHP File Upload RCE and Privilege Escalation**
+](<PHP File Upload RCE and Privilege Escalation/README.md>)
