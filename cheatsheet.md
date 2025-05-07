@@ -405,7 +405,6 @@ sqlmap -u <URL> --sql-shell
 | `--tor`          | Use Tor for anonymity           |
 | `--proxy`        | Use a proxy (e.g. http://...)   |
 | `--timeout=N`    | Set request timeout             |
-| `--retries=N`    | Retry failed requests N times   |
 
 ---
 ---
