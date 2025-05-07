@@ -151,7 +151,7 @@ hydra -l molly -P /usr/share/wordlists/rockyou.txt <ip_addr> -t 4 ssh -v
 # 💥 Metasploit
 
 ## 📦 Starting Metasploit
-```bash
+```
 msfconsole
 ```
 
